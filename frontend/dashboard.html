@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2>Dashboard</h2>
+    <button onclick="logout()">Logout</button>
+    <form id="note-form">
+      <input type="text" id="title" placeholder="Title" required /><br />
+      <textarea id="content" placeholder="Note content" required></textarea
+      ><br />
+      <button type="submit">Add Note</button>
+    </form>
+    <div id="notes"></div>
+
+    <script>
+      const token = localStorage.getItem("token");
+      if (!token) window.location.href = "login.html";
+
+      async function fetchNotes() {
+        const res = await fetch("http://localhost:3000/notes", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const notes = await res.json();
+        const notesDiv = document.getElementById("notes");
+        notesDiv.innerHTML = "";
+        notes.forEach((note) => {
+          const div = document.createElement("div");
+          div.innerHTML = `
+          <h4>${note.title}</h4>
+          <p>${note.content}</p>
+          <small>${new Date(note.createdAt).toLocaleString()}</small><br />
+          <button onclick="deleteNote('${note.id}')">Delete</button>
+          <hr />
+        `;
+          notesDiv.appendChild(div);
+        });
+      }
+
+      async function deleteNote(id) {
+        await fetch(`http://localhost:3000/notes/${id}`, {
+          method: "DELETE",
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        fetchNotes();
+      }
+
+      document
+        .getElementById("note-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const title = document.getElementById("title").value;
+          const content = document.getElementById("content").value;
+          await fetch("http://localhost:3000/notes", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ title, content }),
+          });
+          document.getElementById("note-form").reset();
+          fetchNotes();
+        });
+
+      function logout() {
+        localStorage.removeItem("token");
+        window.location.href = "login.html";
+      }
+
+      fetchNotes();
+    </script>
+  </body>
+</html>

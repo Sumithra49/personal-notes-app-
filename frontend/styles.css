@@ -1,0 +1,120 @@
+/* Base body style */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(-45deg, #4f46e5, #3b82f6, #06b6d4, #9333ea);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* Gradient background animation */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Title */
+h2 {
+  margin-top: 50px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+/* Form styling */
+form {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  width: 300px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Input and textarea */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  outline: none;
+}
+
+/* Button */
+button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #2563eb;
+  transform: scale(1.02);
+}
+
+/* Notes section */
+#notes {
+  margin-top: 30px;
+  width: 80%;
+  max-width: 600px;
+  transition: all 0.3s ease;
+}
+
+#notes div {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-left: 5px solid #3b82f6;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#notes div:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Note titles and text */
+#notes h4 {
+  margin: 0;
+  color: #111;
+}
+
+#notes p {
+  margin: 10px 0;
+  color: #444;
+}
+
+small {
+  color: #666;
+  transition: color 0.3s ease;
+}
