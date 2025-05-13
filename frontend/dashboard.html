@@ -21,9 +21,12 @@
       if (!token) window.location.href = "login.html";
 
       async function fetchNotes() {
-        const res = await fetch("http://localhost:3000/notes", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const res = await fetch(
+          "https://personal-notes-app-w5ue.onrender.com/notes",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
         const notes = await res.json();
         const notesDiv = document.getElementById("notes");
         notesDiv.innerHTML = "";
