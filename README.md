@@ -21,21 +21,8 @@ A fullstack note-taking app with **JWT-based authentication**, **protected route
 
 ## 📁 Folder Structure
 
-personal-notes-app/
-├── backend/
-│ ├── server.js
-│ ├── routes/
-│ ├── utils/
-│ ├── middleware/
-│ └── data/
-│ ├── users.json
-│ └── notes.json
-├── frontend/
-│ ├── signup.html
-│ ├── login.html
-│ ├── dashboard.html
-│ ├── styles.css
-│ 
+![image](https://github.com/user-attachments/assets/fac03274-891c-42e6-9edd-1b5730a938e7)
+
 
 
 
