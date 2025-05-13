@@ -42,72 +42,68 @@ Install dependencies:
 npm install
 Start the server:
 
-node server.js
-Ensure data files exist:
+- node server.js
+- Ensure data files exist:
+- mkdir -p data
+- echo "[]" > data/users.json
+- echo "[]" > data/notes.json
+- Server will run at http://localhost:3000
 
+# Frontend
+- You can open the HTML files directly in your browser or serve them with a local server.
 
-mkdir -p data
-echo "[]" > data/users.json
-echo "[]" > data/notes.json
-Server will run at http://localhost:3000
+- Recommended:
 
-Frontend
-You can open the HTML files directly in your browser or serve them with a local server.
-
-Recommended:
-
-Use the Live Server extension in VS Code.
+- Use the Live Server extension in VS Code.
 
 
 # Example structure to open
-frontend/signup.html
-frontend/login.html
-frontend/dashboard.html
-🔐 API Endpoints
-Auth
-Method	Endpoint	Description
-POST	/signup	Register user
-POST	/login	Authenticate user
+- frontend/signup.html
+- frontend/login.html
+- frontend/dashboard.html
+# 🔐 API Endpoints
+- Auth
+- Method	Endpoint	Description
+- POST	/signup	Register user
+- POST	/login	Authenticate user
 
-Notes (requires JWT in Authorization: Bearer <token> header)
-Method	Endpoint	Description
-POST	/notes	Create a note
-GET	/notes	Get all user notes
-DELETE	/notes/:id	Delete note by ID
+- Notes (requires JWT in Authorization: Bearer <token> header)
+- Method	Endpoint	Description
+- POST	/notes	Create a note
+- GET	/notes	Get all user notes
+- DELETE	/notes/:id	Delete note by ID
 
 🧪 Sample Note Object
-json
-Copy
-Edit
+---
 {
   "id": "note-id",
   "title": "My First Note",
   "content": "Learning fullstack is fun!",
   "userId": "id-from-jwt",
   "createdAt": "2025-05-13T10:00:00Z"
-}
+}---
 🌈 UI Enhancements
-Animated background gradient
+- Animated background gradient
 
-Smooth transitions on form fields and buttons
+- Smooth transitions on form fields and buttons
 
-Responsive form layout
+- Responsive form layout
 
-❗ Security Notes
-Passwords are stored in plain text (for learning purposes). Use bcrypt for hashing in production.
+- ❗ Security Notes
+- Passwords are stored in plain text (for learning purposes). Use bcrypt for hashing in production.
 
-JWT is stored in localStorage. In real-world apps, use HttpOnly cookies for better security.
+- J- WT is stored in localStorage. In real-world apps, use HttpOnly cookies for better security.
 
-📋 Future Improvements
- Edit note (PUT /notes/:id)
+# 📋 Future Improvements
+-  Edit note (PUT /notes/:id)
 
- Token expiry handling (auto logout)
+ - Token expiry handling (auto logout)
 
- Input validations & error UI
+ - Input validations & error UI
 
- Password hashing
+ - Password hashing
 
- Pagination and search for notes
+ - Pagination and search for notes
 
 
  # Sign up
