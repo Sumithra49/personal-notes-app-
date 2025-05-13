@@ -61,20 +61,8 @@ Start the server:
 - frontend/signup.html
 - frontend/login.html
 - frontend/dashboard.html
-# 🔐 API Endpoints
-- Auth
-| Method | Endpoint | Description       |
-| ------ | -------- | ----------------- |
-| POST   | /signup  | Register user     |
-| POST   | /login   | Authenticate user |
+![image](https://github.com/user-attachments/assets/4007d1d8-fb3c-4b7b-a1cb-e7183d8d5329)
 
-
-- Notes (requires JWT in Authorization: Bearer <token> header)
-| Method   | Endpoint     | Description         |
-| -------- | ------------ | ------------------- |
-| `POST`   | `/notes`     | Create a new note   |
-| `GET`    | `/notes`     | Get all user notes  |
-| `DELETE` | `/notes/:id` | Delete a note by ID |
 
 
 🧪 Sample Note Object
