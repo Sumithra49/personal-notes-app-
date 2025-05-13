@@ -6,7 +6,7 @@ A fullstack note-taking app with **JWT-based authentication**, **protected route
 ---
 ## Deployement link
 - Backend:https://personal-notes-app-w5ue.onrender.com
-- Frontend:
+- Frontend:https://personal-note-appp.netlify.app/
 
 ## 🚀 Features
 
