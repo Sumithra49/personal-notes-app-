@@ -63,15 +63,19 @@ Start the server:
 - frontend/dashboard.html
 # 🔐 API Endpoints
 - Auth
-- Method	Endpoint	Description
-- POST	/signup	Register user
-- POST	/login	Authenticate user
+| Method | Endpoint | Description       |
+| ------ | -------- | ----------------- |
+| POST   | /signup  | Register user     |
+| POST   | /login   | Authenticate user |
+
 
 - Notes (requires JWT in Authorization: Bearer <token> header)
-- Method	Endpoint	Description
-- POST	/notes	Create a note
-- GET	/notes	Get all user notes
-- DELETE	/notes/:id	Delete note by ID
+| Method   | Endpoint     | Description         |
+| -------- | ------------ | ------------------- |
+| `POST`   | `/notes`     | Create a new note   |
+| `GET`    | `/notes`     | Get all user notes  |
+| `DELETE` | `/notes/:id` | Delete a note by ID |
+
 
 🧪 Sample Note Object
 ---
